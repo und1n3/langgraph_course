@@ -1,20 +1,16 @@
 # Udemy course: LangGraph Develop LLM powered AI Agents
 
 
+## Agent Executor
+It will be the typical hello world of agents but implemented on LangGraph
 
-## Agentic RAG
-- Based on the Langchain/Mistral Cookbook but refactored.
-- [PAPER: Self-RAG Learning to Retrieve Generate and Critique though self-reflection](https://arxiv.org/pdf/2310.11511)
-- [PAPER: Corrective Retrieval Augmented Generation](https://arxiv.org/pdf/2401.15884)
-- [PAPER: Adaptive-RAG Learning to Adapt Retrieval augmented LLLM through Question Complexity](https://arxiv.org/pdf/2403.14403)
+- [PAPER: ReAct - Sytnergizing Reasoning and Acting in Language Models](https://arxiv.org/pdf/2210.03629)
 
 The goal is to add reflexion in the RAG workflow and see if the answer is indeed based on the documents.
 
 ---
-- [Github repo](https://github.com/emarco177/langgraph-course)
+- [Github repo](https://github.com/emarco177/langgraph-course/tree/project/ReAct-agent)
 
-- [Mistral YT video](https://www.youtube.com/watch?v=sgnrL7yo1TE)
-- [Cookbook](https://github.com/mistralai/cookbook/tree/main/third_party/langchain)
 ---- 
 ### Project setup
 If environment not created:
@@ -22,7 +18,7 @@ If environment not created:
 ```
 sudo apt install python3-poetry # or pip install poetry
 poetry init
-poetry add python-dotenv black isort pytest langchain-openai langchain-ollama langgraph langchain chromadb langchainhub tiktoken langchain-community beautifulsoup4
+poetry add langchain langgraph langchain-ollama langchain-tavily langchainhub black isort python-dotenv
 ```
 If an error raises for LangGraph: 
 write this in the `pyproject.toml` file in python version ">=3.12,<4.0"
@@ -46,7 +42,7 @@ OPENAI_API_KEY=...
 TAVILY_API_KEY=...
 LANGCHAIN_API_KEY=...
 LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=agentic-rag
+LANGCHAIN_PROJECT=langgraph-react
 ```
 
 We will also practice writing tests with pytest for LLMs.
